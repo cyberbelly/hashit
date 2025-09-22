@@ -3,7 +3,7 @@
 import subprocess
 from sys import argv
 
-for x in argv:
+for x in argv[1::]:
     md5raw=subprocess.run(['md5sum',x],stdout=subprocess.PIPE)
     sh1raw= subprocess.run(['sha1sum',x],stdout=subprocess.PIPE)
     md5=md5raw.stdout.decode().split(' ')[0]
